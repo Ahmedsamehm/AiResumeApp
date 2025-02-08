@@ -69,60 +69,73 @@ function Experience() {
   };
 
   return (
-    <div className="space-y-6">
+   
+    <div className="space-y-6 w-full max-w-4xl mx-auto">
       <form
         onSubmit={formik.handleSubmit}
         className="space-y-4 bg-surface-a10 rounded-lg p-5"
       >
-        <h1 className="text-xl font-semibold text-primary-a50">Experience</h1>
-        <FormField
-          label="Job Title"
-          id="jobTitle"
-          type="text"
-          placeholder="Enter your job title"
-          fieldProps={formik.getFieldProps("JobTitle")}
-        />
-        <FormField
-          label="Company"
-          id="company"
-          type="text"
-          placeholder="Enter your company"
-          fieldProps={formik.getFieldProps("Company")}
-          autoComplete="company"
-        />
-        <FormField
-          label="Duration"
-          id="duration"
-          type="text"
-          placeholder="Enter the duration (e.g., 2019 - 2021)"
-          fieldProps={formik.getFieldProps("Duration")}
-        />
-        <FormField
-          label="Location"
-          id="location"
-          type="text"
-          placeholder="Enter the location"
-          fieldProps={formik.getFieldProps("Location")}
-        />
+        <h1 className="text-xl md:text-2xl font-semibold text-primary-a50">
+          Experience
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <FormField
+            label="Job Title"
+            id="jobTitle"
+            type="text"
+            placeholder="Enter your job title"
+            fieldProps={formik.getFieldProps("JobTitle")}
+          />
+          <FormField
+            label="Company"
+            id="company"
+            type="text"
+            placeholder="Enter your company"
+            fieldProps={formik.getFieldProps("Company")}
+            autoComplete="company"
+          />
+          <FormField
+            label="Duration"
+            id="duration"
+            type="text"
+            placeholder="Enter the duration (e.g., 2019 - 2021)"
+            fieldProps={formik.getFieldProps("Duration")}
+          />
+          <FormField
+            label="Location"
+            id="location"
+            type="text"
+            placeholder="Enter the location"
+            fieldProps={formik.getFieldProps("Location")}
+          />
+        </div>
         <div className="relative">
-          <Label htmlFor="ProjectDetails" className=" text-primary-a50">
+          <Label
+            htmlFor="ProjectDetails"
+            className="block text-sm font-medium text-primary-a50"
+          >
             Project Details
           </Label>
           <Textarea
             id="ProjectDetails"
             type="text"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm min-h-[150px]"
             {...formik.getFieldProps("ProjectDetails")}
           />
           <SheetMenu />
         </div>
 
         <div>
-          <Label htmlFor="Challenges" className=" text-primary-a50">
+          <Label
+            htmlFor="Challenges"
+            className="block text-sm font-medium text-primary-a50"
+          >
             Challenges
           </Label>
           <Textarea
             id="Challenges"
             type="text"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm min-h-[150px]"
             {...formik.getFieldProps("Challenges")}
           />
         </div>
@@ -130,13 +143,13 @@ function Experience() {
       </form>
 
       <div className="space-y-4 bg-surface-a10 rounded-lg p-5 text-primary-a50">
-        <h2 className="text-lg font-semibold">Experience List</h2>
+        <h2 className="text-lg md:text-xl font-semibold">Experience List</h2>
         {resumeData?.Experiences?.map((exp, index) => (
           <div
             key={index}
-            className="p-4 border border-gray-300 rounded-md shadow-sm flex justify-between items-center"
+            className="p-4 border border-gray-300 rounded-md shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
           >
-            <div>
+            <div className="flex-1">
               <p className="font-bold">{exp.JobTitle}</p>
               <p>{exp.Company}</p>
               <p>{exp.Duration}</p>
@@ -144,7 +157,7 @@ function Experience() {
             </div>
             <Button
               onClick={() => handleRemoveExperience(index)}
-              className="bg-red-500 text-white p-2 rounded-md hover:bg-red-600"
+              className="bg-red-500 text-white p-2 rounded-md hover:bg-red-600 w-full md:w-auto"
             >
               Remove
             </Button>
@@ -152,6 +165,7 @@ function Experience() {
         ))}
       </div>
     </div>
+  
   );
 }
 

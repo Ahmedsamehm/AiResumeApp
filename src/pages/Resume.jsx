@@ -41,7 +41,7 @@ function Resume() {
             {currentStep === 3 && <Education />}
             {currentStep === 4 && <Skills />}
           </div>
-          <div className="bg-white p-3  ">
+          <div className="bg-white p-0 md:p-3 w-full h-full min-h-screen">
             <ResumePreview />
           </div>
         </div>

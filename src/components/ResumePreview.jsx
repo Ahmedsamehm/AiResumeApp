@@ -19,6 +19,7 @@ const ResumePreview = () => {
 
   return (
     <div>
+        
       <div id="resume-preview" className="bg-white p-6 rounded-xl ">
         <PersonalInfoBody resumeData={resumeData} />
         <Separator className="my-4 bg-gray-600" />

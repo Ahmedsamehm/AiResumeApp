@@ -48,59 +48,61 @@ function UserInfo() {
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="space-y-4 bg-surface-a10 rounded-lg p-5"
+      className="space-y-4 bg-surface-a10 rounded-lg p-5 w-full max-w-4xl mx-auto"
     >
-      <h1 className="text-xl font-semibold text-primary-a50">
+      <h1 className="text-xl md:text-2xl font-semibold text-primary-a50">
         Personal Information
       </h1>
-      <FormField
-        label="Full Name"
-        id="fullName"
-        type="text"
-        placeholder="Enter your full name"
-        fieldProps={formik.getFieldProps("FullName")}
-        autoComplete="name"
-      />
-      <FormField
-        label="Position"
-        id="position"
-        type="text"
-        placeholder="Enter your position"
-        fieldProps={formik.getFieldProps("Position")}
-        autoComplete="organization-title"
-      />
-      <FormField
-        label="Email"
-        id="email"
-        type="email"
-        placeholder="Enter your email"
-        fieldProps={formik.getFieldProps("Email")}
-        autoComplete="email"
-      />
-      <FormField
-        label="Phone Number"
-        id="phoneNumber"
-        type="tel"
-        placeholder="Enter your phone number"
-        fieldProps={formik.getFieldProps("PhoneNumber")}
-        autoComplete="tel"
-      />
-      <FormField
-        label="Address"
-        id="address"
-        type="text"
-        placeholder="Enter your address"
-        fieldProps={formik.getFieldProps("Address")}
-        autoComplete="street-address"
-      />
-      <FormField
-        label="LinkedIn"
-        id="linkedin"
-        type="text"
-        placeholder="Enter your LinkedIn"
-        fieldProps={formik.getFieldProps("LinkedIn")}
-        autoComplete="url"
-      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <FormField
+          label="Full Name"
+          id="fullName"
+          type="text"
+          placeholder="Enter your full name"
+          fieldProps={formik.getFieldProps("FullName")}
+          autoComplete="name"
+        />
+        <FormField
+          label="Position"
+          id="position"
+          type="text"
+          placeholder="Enter your position"
+          fieldProps={formik.getFieldProps("Position")}
+          autoComplete="organization-title"
+        />
+        <FormField
+          label="Email"
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+          fieldProps={formik.getFieldProps("Email")}
+          autoComplete="email"
+        />
+        <FormField
+          label="Phone Number"
+          id="phoneNumber"
+          type="tel"
+          placeholder="Enter your phone number"
+          fieldProps={formik.getFieldProps("PhoneNumber")}
+          autoComplete="tel"
+        />
+        <FormField
+          label="Address"
+          id="address"
+          type="text"
+          placeholder="Enter your address"
+          fieldProps={formik.getFieldProps("Address")}
+          autoComplete="street-address"
+        />
+        <FormField
+          label="LinkedIn"
+          id="linkedin"
+          type="text"
+          placeholder="Enter your LinkedIn"
+          fieldProps={formik.getFieldProps("LinkedIn")}
+          autoComplete="url"
+        />
+      </div>
       <div>
         <Label
           htmlFor="summary"
@@ -111,7 +113,7 @@ function UserInfo() {
         <div className="relative z-50">
           <Textarea
             id="summary"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm min-h-[150px]"
             placeholder="Enter your summary"
             {...formik.getFieldProps("Summary")}
             autoComplete="off"
